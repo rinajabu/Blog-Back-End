@@ -2,9 +2,11 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const app = express()
+const cors = require('cors')
 
 // middleware
 app.use(express.json())
+app.use(cors())
 
 // require controllers
 const postsController = require('./controllers/posts.js')
@@ -13,15 +15,15 @@ const postsController = require('./controllers/posts.js')
 app.use('/posts', postsController)
 
 // listeners
-app.listen(3001, () => {
-    console.log('BLOG: listening...', 3001);
+app.listen(3000, () => {
+    console.log('BLOG: listening...', 3000);
 })
 
 mongoose.connect(
     'mongodb://localhost:27017/reactblog',
     {
         useNewUrlParser: true,
-        useUnifiedTopology: true, 
+        useUnifiedTopology: true,
         useFindAndModify: false
     }
 )
