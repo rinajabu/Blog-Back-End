@@ -13,16 +13,16 @@ const postsController = require('./controllers/posts.js')
 app.use('/posts', postsController)
 
 // listeners
-app.listen(3000, () => {
-    console.log('BLOG: listening...', 3000);
+app.listen(3001, () => {
+    console.log('BLOG: listening...', 3001);
 })
 
 mongoose.connect(
     'mongodb://localhost:27017/reactblog',
-    { 
+    {
         useNewUrlParser: true,
         useUnifiedTopology: true, 
-        useFindAndModify: false 
+        useFindAndModify: false
     }
 )
 
