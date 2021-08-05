@@ -5,6 +5,7 @@ const app = express()
 
 // middleware
 app.use(express.json())
+app.use(cors())
 
 // require controllers
 const postsController = require('./controllers/posts.js')
