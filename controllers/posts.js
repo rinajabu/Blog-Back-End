@@ -16,4 +16,11 @@ router.post('/', (req, res) => {
     })
 })
 
+// delete route
+router.delete('/:id', (req, res) => {
+    Posts.findByIdAndRemove(req.params.id, (err, deletedPost) => {
+        res.json(deletedPost)
+    })
+})
+
 module.exports = router
